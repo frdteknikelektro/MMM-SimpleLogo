@@ -1,0 +1,21 @@
+.simple-logo__container {
+    width: 200px;
+    height: auto;
+}
+
+.simple-logo__container img {
+    width: 100%;
+    height: inherit;
+}
+
+.simple-logo__container.left {
+    margin: 0 auto 0 0;
+}
+
+.simple-logo__container.center {
+    margin: 0 auto;
+}
+
+.simple-logo__container.right {
+    margin: 0 0 0 auto;
+}
