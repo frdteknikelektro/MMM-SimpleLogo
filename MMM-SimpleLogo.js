@@ -2,9 +2,9 @@ Module.register("MMM-SimpleLogo", {
     // Default module config.
     defaults: {
         text: "Simple Logo",
-        fileUrl: config.fileUrl || "modules/MMM-SimpleLogo/public/logo.png",
-        width: config.width || "200px",
-        position: config.position || "left"
+        fileUrl: "modules/MMM-SimpleLogo/public/logo.png",
+        width: "200px",
+        position: "left"
     },
 
     getStyles: function () {
@@ -17,10 +17,10 @@ Module.register("MMM-SimpleLogo", {
     getDom: function() {
         var wrapper = document.createElement("div");
         wrapper.className = 'simple-logo__container';
-        wrapper.classList.add(this.defaults.position);
-        wrapper.style.width = this.defaults.width;
+        wrapper.classList.add(this.config.position);
+        wrapper.style.width = this.config.width;
         var img = document.createElement("img");
-        img.setAttribute('src', this.defaults.fileUrl);
+        img.setAttribute('src', this.config.fileUrl);
         wrapper.appendChild(img);
         return wrapper;
     }
