@@ -1,22 +1,23 @@
 # Module: MMM-SimpleLogo
-The `MMM-SimpleLogo` module is third party modules of the MagicMirror.
-This module simply displays logo.
+
+The `MMM-SimpleLogo` module is third party modules of the MagicMirror. This module simply displays logo.
 
 ## Using the module
 
 To use this module, add it to the modules array in the `config/config.js` file:
-````javascript
+
+```javascript
 modules: [
-	{
-		module: 'MMM-SimpleLogo',
-		position: 'top_left',	// This can be any of the regions.
-		config: {
-			// The config property is optional.
-			// See 'Configuration options' for more information.
-		}
-	}
+    {
+        module: 'MMM-SimpleLogo',
+        position: 'top_left',    // This can be any of the regions.
+        config: {
+            // The config property is optional.
+            // See 'Configuration options' for more information.
+        }
+    }
 ]
-````
+```
 
 ## Configuration options
 
@@ -50,6 +51,13 @@ The following properties can be configured:
 			<td>Horizontal position on current container<br>
 				<br><b>Possible values:</b> <code>left</code>, <code>center</code>, or <code>right</code>
 				<br><b>Default value:</b> <code>left</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>refreshInterval</code></td>
+			<td>Refresh/refetch image file between interval. Only use this if your image url return different image after some interval of time, even the <code>fileUrl</code> is not changed. See this case #2, awesome project by @ElYoM <br>
+				<br><b>Possible values:</b> <code>1000</code>, <code>2000</code>, or <code>10000</code>
+				<br><b>Default value:</b> <code>0</code> (disabled)
 			</td>
 		</tr>
 	</tbody>
