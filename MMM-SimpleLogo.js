@@ -4,7 +4,18 @@ Module.register("MMM-SimpleLogo", {
         text: "Simple Logo",
         fileUrl: "modules/MMM-SimpleLogo/public/logo.png",
         width: "200px",
-        position: "left"
+        position: "left",
+        refreshInterval: 0
+    },
+
+    start: function() {
+        if (this.config.refreshInterval > 0) {
+            var self = this;
+            setInterval(function() {
+                img = document.querySelector('.simple-logo__container img');
+                img.setAttribute('src', self.config.fileUrl + '?' + Date.now());
+            }, this.config.refreshInterval);
+        }
     },
 
     getStyles: function () {
