@@ -14,7 +14,11 @@ Module.register("MMM-SimpleLogo", {
             var imgsrc = self.config.fileUrl;
             setInterval(function() {
                 img = document.querySelector(".simple-logo__container img[src*='" + imgsrc + "']");
-                imgsrc = self.config.fileUrl + '?' + Date.now();
+                imgsrc = self.config.fileUrl;
+		if(imgsrc.includes("?"))
+			imgsrc += '?' + Date.now();
+		else
+			imgsrc += '&' + Date.now();
                 img.setAttribute('src', imgsrc);
             }, this.config.refreshInterval);
         }
