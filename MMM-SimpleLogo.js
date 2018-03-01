@@ -15,7 +15,7 @@ Module.register("MMM-SimpleLogo", {
             setInterval(function() {
                 img = document.querySelector(".simple-logo__container img[src*='" + imgsrc + "']");
                 imgsrc = self.config.fileUrl;
-		if(imgsrc.includes("?"))
+		if(!imgsrc.includes("?"))
 			imgsrc += '?' + Date.now();
 		else
 			imgsrc += '&' + Date.now();
