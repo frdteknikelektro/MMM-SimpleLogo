@@ -36,6 +36,8 @@ Module.register("MMM-SimpleLogo", {
         wrapper.className = 'simple-logo__container';
         wrapper.classList.add(this.config.position);
         wrapper.style.width = this.config.width;
+        var text = document.createTextNode(this.config.text);
+        wrapper.appendChild(text);
         var img = document.createElement("img");
         img.setAttribute('src', this.config.fileUrl);
         wrapper.appendChild(img);
