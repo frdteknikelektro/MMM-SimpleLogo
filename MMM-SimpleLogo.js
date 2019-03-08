@@ -31,7 +31,7 @@ Module.register("MMM-SimpleLogo", {
     },
 
     notificationReceived: function(notification, payload) {
-        if (notification == "MMM-SimpleLogo_CONFIG") {
+        if (notification == "SIMPLE_LOGO_UPDATE") {
             // stop auto-refresh (if any)
             if (this.config.refreshInterval > 0) {
                 clearInterval(this.interval);

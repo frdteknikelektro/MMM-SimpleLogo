@@ -64,7 +64,7 @@ The following properties can be configured:
 </table>
 
 ## Notification Events
-The MMM-SimpleLogo module supports the notification event `MMM-SimpleLogo_CONFIG` which allows the configuration to be dynamically modified.  As an example, the MMM-OnScreenMenu module might be used to dynamic adjust the `fileURL` parameter as follows:
+The MMM-SimpleLogo module supports the notification event `SIMPLE_LOGO_UPDATE` which allows the configuration to be dynamically modified.  As an example, the MMM-OnScreenMenu module might be used to dynamic adjust the `fileURL` parameter as follows:
 
     {
         module: "MMM-OnScreenMenu",
@@ -73,7 +73,7 @@ The MMM-SimpleLogo module supports the notification event `MMM-SimpleLogo_CONFIG
             menuItems: {
                 notify1: {
                     title: "Show Cat",
-                    notification: "MMM-SimpleLogo_CONFIG",
+                    notification: "SIMPLE_LOGO_UPDATE",
                     payload: {
                         fileUrl: "cat.jpg",
                         width: "750px"
@@ -81,7 +81,7 @@ The MMM-SimpleLogo module supports the notification event `MMM-SimpleLogo_CONFIG
                 },
                 notify2: {
                     title: "Show Dog",
-                    notification: "MMM-SimpleLogo_CONFIG",
+                    notification: "SIMPLE_LOGO_UPDATE",
                     payload: {
                         fileUrl: "dog.jpg",
                         width: "1050px"
