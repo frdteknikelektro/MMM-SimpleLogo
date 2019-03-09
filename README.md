@@ -62,3 +62,32 @@ The following properties can be configured:
 		</tr>
 	</tbody>
 </table>
+
+## Notification Events
+The MMM-SimpleLogo module supports the notification event `SIMPLE_LOGO_UPDATE` which allows the configuration to be dynamically modified.  As an example, the MMM-OnScreenMenu module might be used to dynamic adjust the `fileURL` parameter as follows:
+
+    {
+        module: "MMM-OnScreenMenu",
+        position: "top_left",
+        config: {
+            menuItems: {
+                notify1: {
+                    title: "Show Cat",
+                    notification: "SIMPLE_LOGO_UPDATE",
+                    payload: {
+                        fileUrl: "cat.jpg",
+                        width: "750px"
+                    }
+                },
+                notify2: {
+                    title: "Show Dog",
+                    notification: "SIMPLE_LOGO_UPDATE",
+                    payload: {
+                        fileUrl: "dog.jpg",
+                        width: "1050px"
+                    }
+                }
+            }
+        }
+    }
+

@@ -12,13 +12,13 @@ Module.register("MMM-SimpleLogo", {
         if (this.config.refreshInterval > 0) {
             var self = this;
             var imgsrc = self.config.fileUrl;
-            setInterval(function() {
+            this.interval = setInterval(function() {
                 img = document.querySelector(".simple-logo__container img[src*='" + imgsrc + "']");
                 imgsrc = self.config.fileUrl;
-		if(!imgsrc.includes("?"))
-			imgsrc += '?' + Date.now();
-		else
-			imgsrc += '&' + Date.now();
+                if(!imgsrc.includes("?"))
+                        imgsrc += '?' + Date.now();
+                else
+                        imgsrc += '&' + Date.now();
                 img.setAttribute('src', imgsrc);
             }, this.config.refreshInterval);
         }
@@ -28,6 +28,20 @@ Module.register("MMM-SimpleLogo", {
         return [
             this.file('css/mmm-simplelogo.css')
         ];
+    },
+
+    notificationReceived: function(notification, payload) {
+        if (notification == "SIMPLE_LOGO_UPDATE") {
+            // stop auto-refresh (if any)
+            if (this.config.refreshInterval > 0) {
+                clearInterval(this.interval);
+            }
+            // update with new parameters
+            for (var attr in payload) this.config[attr] = payload[attr];
+            // restart auto-refresh (if any)
+            this.start();
+            this.updateDom();
+        }
     },
 
     // Override dom generator.
