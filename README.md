@@ -60,6 +60,13 @@ The following properties can be configured:
 				<br><b>Default value:</b> <code>0</code> (disabled)
 			</td>
 		</tr>
+		<tr>
+			<td><code>text</code></td>
+			<td>Text above the image.<br>
+				<br><b>Possible values:</b> Any text
+				<br><b>Default value:</b> <code>Simple Logo</code>
+			</td>
+		</tr>
 	</tbody>
 </table>
 
